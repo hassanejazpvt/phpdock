@@ -1,0 +1,127 @@
+version: '3.8'
+
+networks:
+  phpdock-network:
+    name: phpdock-network
+    driver: bridge
+
+services:
+  phpdock-php72:
+    image: phpdock-php72:latest
+    build:
+      context: ./7.2
+      dockerfile: Dockerfile
+    container_name: phpdock-php72
+    ports:
+      - ${PHP72_PORT:-5072}:80
+    env_file:
+      - .env.phpdock
+    volumes:
+      - .:/var/www/html
+    networks:
+      - phpdock-network
+
+  # phpdock-php73:
+  #   image: phpdock-php73:latest
+  #   build:
+  #     context: ./7.3
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-php73
+  #   ports:
+  #     - ${PHP73_PORT:-5073}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network
+
+  # phpdock-php74:
+  #   image: phpdock-php74:latest
+  #   build:
+  #     context: ./7.4
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-php74
+  #   ports:
+  #     - ${PHP74_PORT:-5074}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network
+
+  # phpdock-php80:
+  #   image: phpdock-php80:latest
+  #   build:
+  #     context: ./8.0
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-php80
+  #   ports:
+  #     - ${PHP80_PORT:-5080}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network
+
+  # phpdock-php81:
+  #   image: phpdock-php81:latest
+  #   build:
+  #     context: ./8.1
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-php81
+  #   ports:
+  #     - ${PHP81_PORT:-5081}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network
+
+  # phpdock-php82:
+  #   image: phpdock-php82:latest
+  #   build:
+  #     context: ./8.2
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-php82
+  #   ports:
+  #     - ${PHP82_PORT:-5082}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network
+
+  # phpdock-php83:
+  #   image: phpdock-php83:latest
+  #   build:
+  #     context: ./8.3
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-php83
+  #   ports:
+  #     - ${PHP83_PORT:-5083}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network
+
+  # phpdock-php84:
+  #   image: phpdock-php84:latest
+  #   build:
+  #     context: ./8.4
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-php84
+  #   ports:
+  #     - ${PHP84_PORT:-5084}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network
