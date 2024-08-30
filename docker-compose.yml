@@ -44,7 +44,7 @@ services:
       context: ./7.4
       dockerfile: Dockerfile
     container_name: phpdock-php74
-    command: "php -S 0.0.0.0:80"
+    command: "php ./laravel/artisan serve --host=0.0.0.0 --port=80"
     ports:
       - ${PHP74_PORT:-5074}:80
     env_file:
