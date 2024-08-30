@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libonig-dev \
     libzip-dev \
+    libonig-dev \
+    libmcrypt-dev \
     zip \
     unzip \
     git \
@@ -44,6 +46,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 # Set working directory
 WORKDIR /var/www/html
 
-# Expose port 80 and start PHP Server
-EXPOSE 80
-CMD [ "php", "-S", "0.0.0.0:80" ]
+# Expose port 9000 and start PHP-FPM
+EXPOSE 9000
+CMD ["php-fpm"]
