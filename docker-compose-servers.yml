@@ -1,0 +1,36 @@
+version: '3.8'
+
+networks:
+  phpdock-network:
+    external: true
+
+services:
+  phpdock-nginx:
+    image: phpdock-nginx:latest
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: phpdock-nginx
+    ports:
+      - ${NGINX_PORT:-8082}:80
+    env_file:
+      - .env.phpdock
+    volumes:
+      - .:/var/www/html
+    networks:
+      - phpdock-network
+
+  # phpdock-apache2:
+  #   image: phpdock-apache2:latest
+  #   build:
+  #     context: ./apache2
+  #     dockerfile: Dockerfile
+  #   container_name: phpdock-apache2
+  #   ports:
+  #     - ${APACHE2_PORT:-8083}:80
+  #   env_file:
+  #     - .env.phpdock
+  #   volumes:
+  #     - .:/var/www/html
+  #   networks:
+  #     - phpdock-network

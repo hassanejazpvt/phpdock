@@ -25,6 +25,12 @@ RUN apt-get update && apt-get install -y \
     && pecl install mcrypt-1.0.2 \
     && docker-php-ext-enable mcrypt
 
+# Copy configuration files
+COPY www.conf /usr/local/etc/php-fpm.d/www.conf
+COPY php.ini /usr/local/etc/php/php.ini
+COPY start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
