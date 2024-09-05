@@ -11,13 +11,14 @@ services:
   #   build:
   #     context: ./7.2
   #     dockerfile: Dockerfile
-  #   container_name: phpdock-php72
-  #   command: "php -S 0.0.0.0:80"
+  #   container_name: phpdock-php
+  #   command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
   #   ports:
   #     - ${PHP72_PORT:-5072}:80
   #   env_file:
   #     - .env.phpdock
   #   volumes:
+  #     - ./7.2/start.sh:/usr/local/bin/start.sh
   #     - .:/var/www/html
   #   networks:
   #     - phpdock-network
@@ -27,13 +28,14 @@ services:
   #   build:
   #     context: ./7.3
   #     dockerfile: Dockerfile
-  #   container_name: phpdock-php73
-  #   command: "php -S 0.0.0.0:80"
+  #   container_name: phpdock-php
+  #   command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
   #   ports:
   #     - ${PHP73_PORT:-5073}:80
   #   env_file:
   #     - .env.phpdock
   #   volumes:
+  #     - ./7.3/start.sh:/usr/local/bin/start.sh
   #     - .:/var/www/html
   #   networks:
   #     - phpdock-network
@@ -43,13 +45,14 @@ services:
     build:
       context: ./7.4
       dockerfile: Dockerfile
-    container_name: phpdock-php74
-    command: "php ./laravel/artisan serve --host=0.0.0.0 --port=80"
+    container_name: phpdock-php
+    command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
     ports:
       - ${PHP74_PORT:-5074}:80
     env_file:
       - .env.phpdock
     volumes:
+      - ./7.4/start.sh:/usr/local/bin/start.sh
       - .:/var/www/html
     networks:
       - phpdock-network
@@ -59,13 +62,14 @@ services:
   #   build:
   #     context: ./8.0
   #     dockerfile: Dockerfile
-  #   container_name: phpdock-php80
-  #   command: "php -S 0.0.0.0:80"
+  #   container_name: phpdock-php
+  #   command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
   #   ports:
   #     - ${PHP80_PORT:-5080}:80
   #   env_file:
   #     - .env.phpdock
   #   volumes:
+  #     - ./8.0/start.sh:/usr/local/bin/start.sh
   #     - .:/var/www/html
   #   networks:
   #     - phpdock-network
@@ -75,13 +79,14 @@ services:
   #   build:
   #     context: ./8.1
   #     dockerfile: Dockerfile
-  #   container_name: phpdock-php81
-  #   command: "php -S 0.0.0.0:80"
+  #   container_name: phpdock-php
+  #   command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
   #   ports:
   #     - ${PHP81_PORT:-5081}:80
   #   env_file:
   #     - .env.phpdock
   #   volumes:
+  #     - ./8.1/start.sh:/usr/local/bin/start.sh
   #     - .:/var/www/html
   #   networks:
   #     - phpdock-network
@@ -91,13 +96,14 @@ services:
   #   build:
   #     context: ./8.2
   #     dockerfile: Dockerfile
-  #   container_name: phpdock-php82
-  #   command: "php -S 0.0.0.0:80"
+  #   container_name: phpdock-php
+  #   command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
   #   ports:
   #     - ${PHP82_PORT:-5082}:80
   #   env_file:
   #     - .env.phpdock
   #   volumes:
+  #     - ./8.2/start.sh:/usr/local/bin/start.sh
   #     - .:/var/www/html
   #   networks:
   #     - phpdock-network
@@ -107,13 +113,14 @@ services:
   #   build:
   #     context: ./8.3
   #     dockerfile: Dockerfile
-  #   container_name: phpdock-php83
-  #   command: "php -S 0.0.0.0:80"
+  #   container_name: phpdock-php
+  #   command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
   #   ports:
   #     - ${PHP83_PORT:-5083}:80
   #   env_file:
   #     - .env.phpdock
   #   volumes:
+  #     - ./8.3/start.sh:/usr/local/bin/start.sh
   #     - .:/var/www/html
   #   networks:
   #     - phpdock-network
@@ -123,13 +130,14 @@ services:
   #   build:
   #     context: ./8.4
   #     dockerfile: Dockerfile
-  #   container_name: phpdock-php84
-  #   command: "php -S 0.0.0.0:80"
+  #   container_name: phpdock-php
+  #   command: /bin/bash -c "chmod +x /usr/local/bin/start.sh && bash /usr/local/bin/start.sh"
   #   ports:
   #     - ${PHP84_PORT:-5084}:80
   #   env_file:
   #     - .env.phpdock
   #   volumes:
+  #     - ./8.4/start.sh:/usr/local/bin/start.sh
   #     - .:/var/www/html
   #   networks:
   #     - phpdock-network
