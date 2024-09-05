@@ -10,8 +10,14 @@ This repository is designed to help you set up PHP Docker containers effortlessl
 - 📦 All PHP containers include `composer` and `nvm` preinstalled.
 - 📝 An `.env.phpdock` file can be created by copying the `.env.phpdock.example` file.
   - This file allows you to set **custom ports** for your PHP containers.
+  - You can also set the **root password for MariaDB** in this file.
 - ⚙️ **Easy-to-use `docker-compose.yml` file**.
   - Simply comment/uncomment the services or PHP versions you want to enable or disable.
+- 🌐 **Nginx and Apache2 server support**.
+  - Default configuration files (`default.conf`) are provided in the `apache2` and `nginx` directories. These can be used as-is or customized.
+- 🗄️ **MariaDB and Adminer support**.
+  - The MariaDB container is included for database management.
+  - Use the **DB container name as the host** when connecting via Adminer.
 - 🚀 **More features coming soon!**
 
 #### Extended Configuration:
@@ -26,6 +32,15 @@ This repository is designed to help you set up PHP Docker containers effortlessl
 - ⚠️ **Running multiple PHP versions simultaneously**:
   - To run multiple PHP versions at the same time, you need to set different container names for each PHP version.
   - Update the container name in the `default.conf` file for Nginx or Apache2 to match the specific PHP version you want the server to link to.
+
+#### Database Support:
+- 🗄️ **MariaDB** support has been added.
+  - Set the root password in the `.env.phpdock` file.
+  - Use the DB container name as the host when connecting via Adminer.
+- 🛠️ **Adminer** is included for easy database management.
+  
+#### Coming Soon:
+- 🐘 **Postgres and Mongo** support will be added soon.
 
 #### Notes:
 - 🔐 **SSL support is not yet available**.

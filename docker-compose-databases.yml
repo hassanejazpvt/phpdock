@@ -1,0 +1,37 @@
+version: '3.8'
+
+networks:
+  phpdock-network:
+    external: true
+
+services:
+  phpdock-mariadb:
+    image: phpdock-mariadb:latest
+    build:
+      context: ./mariadb
+      dockerfile: Dockerfile
+    container_name: phpdock-mariadb
+    ports:
+      - ${MARIADB_PORT:-3356}:3306
+    env_file:
+      - .env.phpdock
+    volumes:
+      - ./mariadb/data:/var/lib/mysql:Z
+      - .:/var/www/html
+    networks:
+      - phpdock-network
+
+  phpdock-adminer:
+    image: phpdock-adminer:latest
+    build:
+      context: ./adminer
+      dockerfile: Dockerfile
+    container_name: phpdock-adminer
+    ports:
+      - ${ADMINER_PORT:-8085}:8080
+    env_file:
+      - .env.phpdock
+    volumes:
+      - ./adminer/themes/Hydra-Dark/adminer.css:/var/www/html/adminer.css
+    networks:
+      - phpdock-network
